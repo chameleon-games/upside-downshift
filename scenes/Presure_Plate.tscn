@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bul04reytx2rd"]
+
+[ext_resource type="Script" uid="uid://cwcjs64khaelu" path="res://Scripts/area_3d.gd" id="1_d7lj3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_corjp"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qnrxp"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Area3D" type="Area3D" unique_id=1079947703]
+script = ExtResource("1_d7lj3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1718503559]
+transform = Transform3D(1, 0, 0, 0, 0.039535224, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_corjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1751938837]
+transform = Transform3D(1, 0, 0, 0, 0.039535224, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_qnrxp")

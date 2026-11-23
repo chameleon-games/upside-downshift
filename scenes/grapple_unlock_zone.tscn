@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cgdv2ai55n7lf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dpkrb"]
+size = Vector3(8.420166, 5.9570313, 1)
+
+[node name="GrappleUnlockZone" type="Area3D" unique_id=989100063]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=364560258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2812016, 0)
+shape = SubResource("BoxShape3D_dpkrb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

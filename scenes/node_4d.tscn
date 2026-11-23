@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bun0lbfd37beg"]
+
+[ext_resource type="Shader" uid="uid://cpj4j5la3vmvg" path="res://scenes/Outlinne.gdshader" id="1_3cmpg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6v8j"]
+render_priority = 0
+shader = ExtResource("1_3cmpg")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 3.415
+shader_parameter/constant_width = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vf6t"]
+next_pass = SubResource("ShaderMaterial_i6v8j")
+
+[sub_resource type="BoxMesh" id="BoxMesh_uabrw"]
+material = SubResource("StandardMaterial3D_0vf6t")
+
+[node name="Node3D" type="Node3D" unique_id=1312766331]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1958206764]
+mesh = SubResource("BoxMesh_uabrw")

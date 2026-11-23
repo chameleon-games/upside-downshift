@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b1o0awiw4o33b"]
+
+[ext_resource type="Script" uid="uid://28ahx0cysjsg" path="res://pickup_popup.gd" id="1_8hak6"]
+
+[node name="PickupPopup" type="CanvasLayer" unique_id=11207273]
+layer = 50
+visible = false
+script = ExtResource("1_8hak6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=478098653]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=991223232]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -165.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=907630685]
+layout_mode = 2

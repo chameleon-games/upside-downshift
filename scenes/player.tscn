@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c7fl701mhx7sw"]
+
+[ext_resource type="Script" uid="uid://blkyxub876ype" path="res://Scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="AudioStream" uid="uid://dyee10y3oqn2v" path="res://scenes/868548__siriuss19yt__footsteps-on-old-concrete-slabs.wav" id="2_g2els"]
+[ext_resource type="PackedScene" uid="uid://mc8b4gurfm06" path="res://scenes/Pause_Menue.tscn" id="3_qhqgy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_u8vuu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
+gradient = SubResource("Gradient_g2els")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_qhqgy"]
+
+[node name="Player" type="CharacterBody3D" unique_id=602944008]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0217428, 0)
+script = ExtResource("1_3vyb7")
+sprint_fov = 95.0
+sprint_speed = 10.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1069662970]
+layers = 2
+mesh = SubResource("CapsuleMesh_u8vuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1204749507]
+shape = SubResource("CapsuleShape3D_3vyb7")
+
+[node name="Head" type="Node3D" parent="." unique_id=1448728153]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="Camera" type="Camera3D" parent="Head" unique_id=509323828]
+current = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1445355310]
+visible = false
+
+[node name="FlipIndicator" type="TextureProgressBar" parent="HUD" unique_id=1408207799]
+visible = false
+custom_minimum_size = Vector2(150, 15)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -305.0
+offset_top = -102.99994
+offset_right = -155.0
+offset_bottom = -39.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2.0400023, 1.64)
+max_value = 1.0
+step = 0.01
+value = 1.0
+texture_over = SubResource("GradientTexture2D_qhqgy")
+tint_under = Color(0.1254902, 0.1254902, 0.1254902, 1)
+tint_progress = Color(0, 0.7921569, 0.13333334, 1)
+
+[node name="FootstepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=34904962]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9932432, 0)
+stream = ExtResource("2_g2els")
+
+[node name="Control" parent="." unique_id=496144163 instance=ExtResource("3_qhqgy")]
+
+[node name="GrappleRope" type="Node3D" parent="." unique_id=419528964]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GrappleRope" unique_id=2030638996]
+transform = Transform3D(0.03, 0, 0, 0, -4.371139e-08, -0.03, 0, 1, -1.3113416e-09, 0, 0, -0.5)
+visible = false
+mesh = SubResource("CylinderMesh_qhqgy")

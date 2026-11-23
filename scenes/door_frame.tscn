@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cfmnd67va71lg"]
+
+[node name="DoorFrame" type="Node3D" unique_id=497547093]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=514884250]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=201392002]
+transform = Transform3D(1.6, 0, 0, 0, 2.6, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1959736939]
+transform = Transform3D(1.2, 0, 0, 0, 2.3, 0, 0, 0, 0.25, 0, -0.09412843, 0)
+operation = 2
+size = Vector3(1.1213379, 1.130127, 1)
